@@ -7,10 +7,11 @@ public class script_Character_Select_Panel : MonoBehaviour {
 
 public string [] characters;
 public string [] weapons;
+public GameObject [] characterweaponPrefab;
 public Text selectionText;
 int characterChoice;
 int weaponChoice;
-
+int characterweaponIndex;
 void Start(){
 
 	characterChoice = 0;
@@ -44,6 +45,10 @@ public void Readypressed()	{
 		else {
 		Debug.Log ("Character and Weapon selected");
 		Debug.Log ("Destroying Character Select Panel");
+		characterweaponIndex = (((characterChoice -1)*10) + (weaponChoice -1));
+		Debug.Log ("characterweaponIndex is: " + characterweaponIndex) ;
+
+
 		Destroy(this.gameObject);
 
 		}
